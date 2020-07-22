@@ -1,6 +1,6 @@
-title: [The title of your site]
-description: [A short description of your site's purpose]
+# title: [The title of your site]
+# description: [A short description of your site's purpose]
 # logo: [Location of the logo]
-show_downloads: false
+# show_downloads: false
 # google_analytics: [Your Google Analytics tracking ID]
 theme: jekyll-theme-minimal
