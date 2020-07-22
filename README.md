@@ -8,7 +8,7 @@ This is a very simple, plugin agnostic, guide for automating PaperMC updates and
 
 This guide is set up for Minecraft version 1.16.1, but can be easily altered for past or future versions.
 
-The configuration I have calls for automatic login of the Windows 10 account. Depending on your use case, this may not be desirable and alternative settings for Task Scheduler can be set to run without sign in.
+The configuration below calls for automatic login of the Windows 10 account. Depending on your use case, this may not be desirable and alternative settings for Task Scheduler can be set to run without sign in.
 
 This guide assumes you already have a PaperMC server up and running. [Here](https://www.youtube.com/watch?v=st8F2MPyHKk) is an easy to follow video on how to get one going for 1.16.1.
 
@@ -24,7 +24,7 @@ java -Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMill
 ```
 `TITLE papermc` simply renames the command prompt window to `papermc`. This will be useful later.
 
-The arguments come from [Aikar's JVM Tuning Guide](https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/). Make sure to check to see that you are using the most up to date JVM arguments from here.
+The arguments come from [Aikar's JVM Tuning Guide](https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/). Make sure to check to see that you are using the most up to date JVM arguments from here, and **do not** just copy and paste this in without reading the linked guide.
 
 ### Server Stop
 
