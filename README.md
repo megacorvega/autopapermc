@@ -24,7 +24,7 @@ java -Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMill
 ```
 `TITLE papermc` simply renames the command prompt window to `papermc`. This will be useful later.
 
-The arguments come from [Aikar's JVM Tuning Guide](https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/). Make sure to check to see that you are using the most up to date JVM arguments from here, and **do not** just copy and paste this in without reading the linked guide.
+The arguments come from [Aikar's JVM Tuning Guide](https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/). Make sure to check to see that you are using the most up to date JVM arguments from here, and ***DO NOT*** just copy and paste this in without reading the linked guide.
 
 ### Server Stop
 
