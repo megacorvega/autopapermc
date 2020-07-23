@@ -69,20 +69,28 @@ So now open up Task Manager, and select "Create Task..." in the Actions panel on
 
 ### Server Download
 #### General
+
 - Name: mc_server_dl
 - Description: whatever-you-want
 - Security Options: Select "Run only when user is logged on"
 - Configure for: Windows 10
+
 #### Triggers
+
 - Click "New..."
 - Begin the Task: "At log on"
 - Settings: Any user
 - Advanced Settings: Enabled
+
 #### Actions
+
 - Action: Start a program
 - Settings: In Program/script enter the absolute path to `mc_server_dl.bat` in quotations. Then enter the path to the folder `mc_server_dl.bat` is in **WITHOUT QUOTES**
+
 #### Conditions
+
 - Leave everything here as default.
+
 #### Settings
 - If the task is already running, set: "Do not start a new instance"
 
