@@ -54,7 +54,7 @@ autoStop.vbs
 
 ### Server Update
 
-We will be using `wget` to pull the most recent server version of PaperMC. For use in Windows, `wget` must be downloaded from [here](https://eternallybored.org/misc/wget/).
+We will be using `wget` to pull the most recent server version of PaperMC. For use in Windows, `wget` must be downloaded from [here](https://eternallybored.org/misc/wget/). Ensure that `wget` is added to your Windows path.
 
 Create this batch file for updating. I named mine `mc_server_dl.bat` but feel free to name it whatever you'd like.
 
