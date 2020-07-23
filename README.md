@@ -57,4 +57,9 @@ This command will remove the current server version and download the most recent
 
 ## Windows 10 Task Scheduler Setup
 
-Now that we have all of the server related commands ready to go, we can automate the starting and stopping of these tasks through Task Scheduler. This guide will configure the server to stop at 6:00 AM, restart the computer at 6:01 AM, and have the server update then start back up.
+Now that we have all of the server related commands ready to go, we can automate the starting and stopping of these tasks through Task Scheduler. This guide will configure the server to stop at 5:59 AM, restart the computer at 6:01 AM, and have the server update then start back up. These times are specific to my preferences and the sleep command in the Server Stop script, so feel free to set the times up however you'd like. 
+
+|Syntax|Description|Test Text|
+|:-:|:-:|:-:|
+| Header      | Title       | Here's this   |
+| Paragraph   | Text        | And more      |
