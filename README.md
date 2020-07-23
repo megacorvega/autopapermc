@@ -33,10 +33,13 @@ Normally to stop the server you would have to manually type in `stop` for the se
 ```
 Set WshShell = WScript.CreateObject("WScript.shell")
 WshShell.AppActivate "papermc"
+WshShell.SendKeys "ATTN: THE SERVER WILL BEGIN RESTART IN 1 MINUTE"
+WshShell.SendKeys "{ENTER}"
+WScript.Sleep 60000 'Sleeps for 60 seconds
 WshShell.SendKeys "stop"
 WshShell.SendKeys "{ENTER}"
 ```
-This command very simply selects the open server command window (that we named `papermc`) and issues the `stop` command that we usually would have to manually type in.
+This command very simply selects the open server command window (that we named `papermc`) and issues the `stop` command that we usually would have to manually type in. I have it set to issue a warning that the server will restart after 60 seconds. This can be adjusted to your preference, or removed altogether.
 
 ### Server Update
 
