@@ -68,16 +68,16 @@ This command will remove the current server version and download the most recent
 
 ## Windows 10 Task Scheduler Setup
 
-Now that we have all of the server related commands ready to go, we can automate the starting and stopping of these tasks through Task Scheduler. This guide will configure the server to stop daily at 5:59 AM, restart the computer at 6:01 AM, and have the server update then start back up. These times are specific to my preferences and the sleep command in the Server Stop script, so feel free to set the times/days up however you'd like.
+Now that we have all of the server related commands ready to go, we can automate the starting and stopping of these tasks through Task Scheduler. This guide will configure the server to stop daily at 5:59 AM, restart the computer at 6:01 AM, and have the server update then start back up. These times are specific to my preferences and the sleep command in the Server Stop script. So feel free to set the times/days up however you'd like.
 
-**NOTE: These scripts will only work if you have the user set to login automatically after startup** This is to simplify the commands and is up to preference. You can absolutely run these whether or not the user is logged in. The Task Scheduler configuration can be easily configured as such in the General tab.
+**NOTE: These scripts will only work if you have the user set to login automatically after startup** This is to simplify the commands and is up to preference. You can absolutely run these whether or not the user is logged in. The Task Scheduler configuration can be easily modified in the General tab.
 
 So now open up Task Manager, and select "Create Task..." in the Actions panel on the right side. Below are lists detailing what to enter in each tab when creating the task.
 ___
 ### Server Download
 #### General
 
-- Name: mc_server_dl
+- Name: whatever-you-want
 - Description: whatever-you-want
 - Security Options: Select "Run only when user is logged on"
 - Configure for: Windows 10
@@ -105,7 +105,7 @@ ___
 - Give this task a unique name, and then configure everything the exact same way as Server Download, except in Actions where you define where the `paperclip.bat` server startup file is located.
 ___
 ### Stop Server
-- Give this task a unique name, and then configure everything the exact same way as Server Download except for these options:
+- Give this task a unique name, define `autoStop.bat` as the startup file in Actions, and then configure everything the exact same way as Server Download except for these options:
 
 #### Triggers
 
@@ -138,4 +138,4 @@ ___
 ___
 ### Conclusion
 
-And that's it! At this point you should have a server that achieves the tasks we identified in the intro. If you have any questions/issues with the guide please post them in [my github](https://github.com/megacorvega/autopapermc/issues). Enjoy!
+And that's it! At this point you should have a server that achieves the tasks we identified in the intro. If you have any questions/issues with the guide please post them in [my github](https://github.com/megacorvega/autopapermc/issues). If common issues arise, I will add an FAQ with those addressed. Enjoy!
