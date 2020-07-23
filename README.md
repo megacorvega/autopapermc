@@ -12,7 +12,7 @@ The configuration below calls for automatic login of the Windows 10 account. Dep
 
 This guide assumes you already have a PaperMC server up and running. [Here](https://www.youtube.com/watch?v=st8F2MPyHKk) is an easy to follow video on how to get one going for 1.16.1.
 
-**NOTE: Make sure that every batch/script file we create here is located in the same folder as paperclip.jar.
+**NOTE: Make sure that every batch/script file we create here is located in the same folder as paperclip.jar.**
 
 ## Batch & VBScript Commands
 ___
