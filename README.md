@@ -2,8 +2,8 @@
 
 This is a very simple, plugin agnostic, guide for automating PaperMC updates and restarts on Windows 10. The goal is to create a sequence that, upon startup, achieves the following:
 
-- Automatic start of the server on boot
-- Automatic stopping of the server
+- Automatic upate & start of the server on boot
+- Automatic save & stop of the server
 - Timed restart of Windows 10
 
 This guide is set up for Minecraft version 1.16.1, but can be easily altered for past or future versions.
@@ -61,7 +61,7 @@ This command will remove the current server version and download the most recent
 
 ## Windows 10 Task Scheduler Setup
 
-Now that we have all of the server related commands ready to go, we can automate the starting and stopping of these tasks through Task Scheduler. This guide will configure the server to stop at 5:59 AM, restart the computer at 6:01 AM, and have the server update then start back up. These times are specific to my preferences and the sleep command in the Server Stop script, so feel free to set the times up however you'd like.
+Now that we have all of the server related commands ready to go, we can automate the starting and stopping of these tasks through Task Scheduler. This guide will configure the server to stop daily at 5:59 AM, restart the computer at 6:01 AM, and have the server update then start back up. These times are specific to my preferences and the sleep command in the Server Stop script, so feel free to set the times/days up however you'd like.
 
 **NOTE: These scripts will only work if you have the user set to login automatically after startup** This is to simplify the commands and is up to preference. You can absolutely run these whether or not the user is logged in. The Task Scheduler configuration can be easily configured as such in the General tab.
 
