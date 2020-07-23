@@ -66,7 +66,7 @@ Now that we have all of the server related commands ready to go, we can automate
 **NOTE: These scripts will only work if you have the user set to login automatically after startup** This is to simplify the commands and is up to preference. You can absolutely run these whether or not the user is logged in. The Task Scheduler configuration can be easily configured as such in the General tab.
 
 So now open up Task Manager, and select "Create Task..." in the Actions panel on the right side. Below are lists detailing what to enter in each tab when creating the task.
-
+___
 ### Server Download
 #### General
 
@@ -93,6 +93,42 @@ So now open up Task Manager, and select "Create Task..." in the Actions panel on
 
 #### Settings
 - If the task is already running, set: "Do not start a new instance"
-
+___
 ### Server Startup
-- Configure everything the exact same way as Server Download, except in Actions where you define where the `paperclip.bat` server startup file is located.
+- Give this task a unique name, and then configure everything the exact same way as Server Download, except in Actions where you define where the `paperclip.bat` server startup file is located.
+___
+### Stop Server
+- Give this task a unique name, and then configure everything the exact same way as Server Download except for these options:
+
+#### Triggers
+
+- Click "New..."
+- Begin the Task: "On a schedule"
+- Settings: Daily, Start on whatever date/time you want, Recur every: 1 days (or however often you want to update the server and restart the PC)
+- Advanced Settings: Enabled
+
+#### Settings
+
+- If the task is already running, Stop the exisiting instance.
+___
+### Restart PC
+- Give this task a unique name, and then configure everything the exact same way as Server Download except for these options:
+
+#### Triggers
+
+- Click "New..."
+- Begin the Task: "On a schedule"
+- Settings: Daily, Start on whatever date/time you want AFTER the stop server command. I have mine set to 2 minutes after so the sleep and stop command have plenty of time to run. Recur every: 1 days (or however often you want to update the server and restart the PC)
+- Advanced Settings: Enabled
+
+#### Actions
+- Action: Start a program
+- Settings: In "Program/script:" type in `shutdown`. Then below in "Add arguments (optional):" type in `/r /f /t 0`. The arugments tell the PC to restart, force any applications to close, and time=0 so it will restart immediately. 
+
+#### Settings
+
+- If the task is already running, Stop the exisiting instance.
+___
+### Conclusion
+
+And that's it! At this point you should have a server that achieves the tasks we identified in the intro. If you have any questions/issues with the guide please post them in [my github](https://github.com/megacorvega/autopapermc/issues). Enjoy!
