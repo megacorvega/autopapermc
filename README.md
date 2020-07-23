@@ -12,6 +12,8 @@ The configuration below calls for automatic login of the Windows 10 account. Dep
 
 This guide assumes you already have a PaperMC server up and running. [Here](https://www.youtube.com/watch?v=st8F2MPyHKk) is an easy to follow video on how to get one going for 1.16.1.
 
+**NOTE: Make sure that every batch/script file we create here is located in the same folder as paperclip.jar.
+
 ## Batch & VBScript Commands
 ___
 ### Server Startup
@@ -41,6 +43,8 @@ WshShell.SendKeys "{ENTER}"
 ```
 This command very simply selects the open server command window (that we named `papermc`) and issues the `stop` command that we usually would have to manually type in. I have it set to issue a warning that the server will restart after 60 seconds. This can be adjusted to your preference, or removed altogether.
 
+Now in order for this code to activate nicely in Task Manager, we will run it from a batch file you can call `autoStop.bat`. Here is that command:
+
 ### Server Update
 
 We will be using `wget` to pull the most recent server version of PaperMC. For use in Windows, `wget` must be downloaded from [here](https://eternallybored.org/misc/wget/).
@@ -59,16 +63,26 @@ This command will remove the current server version and download the most recent
 
 Now that we have all of the server related commands ready to go, we can automate the starting and stopping of these tasks through Task Scheduler. This guide will configure the server to stop at 5:59 AM, restart the computer at 6:01 AM, and have the server update then start back up. These times are specific to my preferences and the sleep command in the Server Stop script, so feel free to set the times up however you'd like.
 
-### General
+**NOTE: These scripts will only work if you have the user set to login automatically after startup** This is to simplify the commands and is up to preference. You can absolutely run these whether or not the user is logged in. The Task Scheduler configuration can be easily configured as such in the General tab.
+
+### Server Download
+#### General
 - Name: mc_server_dl
-- Description: <whatever-you-want>
+- Description: whatever-you-want
 - Security Options: Select "Run only when user is logged on"
 - Configure for: Windows 10
-### Triggers
+#### Triggers
 - Click "New..."
 - Begin the Task: "At log on"
 - Settings: Any user
 - Advanced Settings: Enabled
-### Actions
+#### Actions
 - Action: Start a program
 - Settings: In Program/script enter the absolute path to `mc_server_dl.bat` in quotations. Then enter the path to the folder `mc_server_dl.bat` is in **WITHOUT QUOTES**
+#### Conditions
+- Leave everything here as default. If you are running on a Laptop, you can toggle the Power settings as desired.
+#### Settings
+- If the task is already running, set: "Do not start a new instance"
+
+### Server Startup
+- Configure everything the exact same way as Server Download, except in Actions where you define where the `paperclip.bat` server startup file is located.
