@@ -45,7 +45,7 @@ This command very simply selects the open server command window (that we named `
 
 We will be using `wget` to pull the most recent server version of PaperMC. For use in Windows, `wget` must be downloaded from [here](https://eternallybored.org/misc/wget/).
 
-Create this batch file for updating. I named mine `server_dl.bat` but feel free to name it whatever you'd like.
+Create this batch file for updating. I named mine `mc_server_dl.bat` but feel free to name it whatever you'd like.
 
 ```
 @echo off
@@ -57,9 +57,18 @@ This command will remove the current server version and download the most recent
 
 ## Windows 10 Task Scheduler Setup
 
-Now that we have all of the server related commands ready to go, we can automate the starting and stopping of these tasks through Task Scheduler. This guide will configure the server to stop at 5:59 AM, restart the computer at 6:01 AM, and have the server update then start back up. These times are specific to my preferences and the sleep command in the Server Stop script, so feel free to set the times up however you'd like. 
+Now that we have all of the server related commands ready to go, we can automate the starting and stopping of these tasks through Task Scheduler. This guide will configure the server to stop at 5:59 AM, restart the computer at 6:01 AM, and have the server update then start back up. These times are specific to my preferences and the sleep command in the Server Stop script, so feel free to set the times up however you'd like.
 
-|Syntax|Description|Test Text|
-|:-:|:-:|:-:|
-| Header      | Title       | Here's this   |
-| Paragraph   | Text        | And more      |
+### General
+- Name: mc_server_dl
+- Description: <whatever-you-want>
+- Security Options: Select "Run only when user is logged on"
+- Configure for: Windows 10
+### Triggers
+- Click "New..."
+- Begin the Task: "At log on"
+- Settings: Any user
+- Advanced Settings: Enabled
+### Actions
+- Action: Start a program
+- Settings: In Program/script enter the absolute path to `mc_server_dl.bat` in quotations. Then enter the path to the folder `mc_server_dl.bat` is in **WITHOUT QUOTES**
