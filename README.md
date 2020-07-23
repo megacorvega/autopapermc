@@ -14,8 +14,10 @@ This guide assumes you already have a PaperMC server up and running. [Here](http
 
 **NOTE: Make sure that every batch/script file we create here is located in the same folder as paperclip.jar.**
 
-## Batch & VBScript Commands
 ___
+
+## Batch & VBScript Commands
+
 ### Server Startup
 
 In order to start the server, I create `paperclip.bat` with the following arguments:
@@ -65,6 +67,8 @@ del paperclip.jar
 wget https://papermc.io/api/v1/paper/1.16.1/latest/download/ -O paperclip.jar
 ```
 This command will remove the current server version and download the most recent version using the PaperMC download API. It then renames the file `paperclip.jar` so that the above `paperclip.bat` file will work. Obviously we are using 1.16.1 here, but the API link can be updated for future versions.
+
+___
 
 ## Windows 10 Task Scheduler Setup
 
