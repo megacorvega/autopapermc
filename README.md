@@ -43,7 +43,14 @@ WshShell.SendKeys "{ENTER}"
 ```
 This command very simply selects the open server command window (that we named `papermc`) and issues the `stop` command that we usually would have to manually type in. I have it set to issue a warning that the server will restart after 60 seconds. This can be adjusted to your preference, or removed altogether.
 
-Now in order for this code to activate nicely in Task Manager, we will run it from a batch file you can call `autoStop.bat`. Here is that command:
+Now in order for this code to activate nicely in Task Manager, we will run it from a very simple batch file you can call `autoStop.bat`. Here is that command:
+
+```
+@echo off
+autoStop.vbs
+```
+
+**NOTE: MAKE SURE YOU USE THIS BATCH FILE, NOT THE VBS FILE, IN THE TASK SCHEDULER SECTION BELOW**
 
 ### Server Update
 
