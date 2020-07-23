@@ -65,6 +65,8 @@ Now that we have all of the server related commands ready to go, we can automate
 
 **NOTE: These scripts will only work if you have the user set to login automatically after startup** This is to simplify the commands and is up to preference. You can absolutely run these whether or not the user is logged in. The Task Scheduler configuration can be easily configured as such in the General tab.
 
+So now open up Task Manager, and select "Create Task..." in the Actions panel on the right side. Below are lists detailing what to enter in each tab when creating the task.
+
 ### Server Download
 #### General
 - Name: mc_server_dl
@@ -80,7 +82,7 @@ Now that we have all of the server related commands ready to go, we can automate
 - Action: Start a program
 - Settings: In Program/script enter the absolute path to `mc_server_dl.bat` in quotations. Then enter the path to the folder `mc_server_dl.bat` is in **WITHOUT QUOTES**
 #### Conditions
-- Leave everything here as default. If you are running on a Laptop, you can toggle the Power settings as desired.
+- Leave everything here as default.
 #### Settings
 - If the task is already running, set: "Do not start a new instance"
 
