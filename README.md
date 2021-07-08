@@ -81,11 +81,20 @@ urllib.request.urlretrieve(url, "paperclip.jar")
 ```
 This command will achieve the same result as the V1 section. All you have to do is change the value for the variable `ver` to whatever version you need. 
 
+Create this batch file for updating. I named mine `server_update.bat` but feel free to name it whatever you'd like. You need to edit the file paths to include your version of Python and the location of the `update.py` in your server folder.
+
+```
+@echo off
+cd <PATH-TO-SERVER-FOLDER>
+del paperclip.jar
+"C:\Users\Username\AppData\Local\Programs\Python\<python version>\python.exe" "<full server path>\update.py"
+```
+
 ## For Paper API V1 (Depricated)
 
 We will be using `wget` to pull the most recent server version of PaperMC. For use in Windows, `wget` must be downloaded from [here](https://eternallybored.org/misc/wget/). Ensure that `wget` is added to your Windows path.
 
-Create this batch file for updating. I named mine `mc_server_dl.bat` but feel free to name it whatever you'd like.
+Create this batch file for updating. I named mine `server_update.bat` but feel free to name it whatever you'd like.
 
 ```
 @echo off
@@ -125,7 +134,7 @@ ___
 #### Actions
 
 - Action: Start a program
-- Settings: In Program/script enter the absolute path to `mc_server_dl.bat` in quotations. Then enter the path to the folder `mc_server_dl.bat` is in **WITHOUT QUOTES**
+- Settings: In Program/script enter the absolute path to `server_update.bat` in quotations. Then enter the path to the folder `server_update.bat` is in **WITHOUT QUOTES**
 
 #### Conditions
 
