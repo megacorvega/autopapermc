@@ -56,6 +56,33 @@ autoStop.vbs
 
 ### Server Update
 
+PaperMC changed their API in V2 and there is no longer a `latest` branch for downloading. In order to automate the new downloads, I specify a Python 3 script below that will automatically download the latest version. There are plenty of easy to follow guides for installing Python 3 on your PC if you don't already have it. 
+
+The API V1 is depricated, but I will keep the instructions below for an API V1 download just in case.
+
+## For Paper API v2
+
+Copy this Python 3 script below into a text file and save as `update.py`.
+
+```
+import requests
+import json
+import urllib.request
+
+ver = "1.17" # <-- This is the only thing you need to change for new versions
+
+link = "https://papermc.io/api/v2/projects/paper/versions/" + ver
+page = requests.get(link).json()
+
+num = max(page['builds'])
+url = link + "/builds/{0}/downloads/paper-".format(num) + ver + "-{0}.jar".format(num)
+
+urllib.request.urlretrieve(url, "paperclip.jar")
+```
+This command will achieve the same result as the V1 section. All you have to do is change the value for the variable `ver` to whatever version you need. 
+
+## For Paper API V1 (Depricated)
+
 We will be using `wget` to pull the most recent server version of PaperMC. For use in Windows, `wget` must be downloaded from [here](https://eternallybored.org/misc/wget/). Ensure that `wget` is added to your Windows path.
 
 Create this batch file for updating. I named mine `mc_server_dl.bat` but feel free to name it whatever you'd like.
@@ -67,7 +94,6 @@ del paperclip.jar
 wget https://papermc.io/api/v1/paper/1.16.1/latest/download/ -O paperclip.jar
 ```
 This command will remove the current server version and download the most recent version using the PaperMC download API. It then renames the file `paperclip.jar` so that the above `paperclip.bat` file will work. Obviously we are using 1.16.1 here, but the API link can be updated for future versions.
-
 ___
 
 ## Windows 10 Task Scheduler Setup
